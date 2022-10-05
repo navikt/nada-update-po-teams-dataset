@@ -44,5 +44,6 @@ if __name__ == '__main__':
 
     try:
         err = df_to_table(client, df_merged, TARGET_TABLE)
+        _logger.info(f"Successfully updated table {TARGET_TABLE}")
     except:
         _logger.error("Could not update dataset")
