@@ -1,0 +1,17 @@
+apiVersion: nais.io/v1
+kind: Naisjob
+metadata:
+  labels:
+    team: nada
+  name: nada-update-po-teams-dataset
+  namespace: nada
+spec:
+  image: {{ image }}
+  schedule: "10 5 * * *"
+  backoffLimit: 2
+  envFrom:
+    - secret: nada-data-analyse-sa
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
