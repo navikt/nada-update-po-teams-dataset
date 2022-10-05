@@ -1,4 +1,5 @@
 import datetime
+import json
 import os
 import requests
 import pandas as pd
@@ -9,7 +10,7 @@ from google.oauth2.service_account import Credentials
 from config import PROJECT_ID, DATASET, DATAPRODUCT_TABLE, DATASTORY_TABLE, TARGET_TABLE, TEAMKATALOG_URL
 
 if __name__ == '__main__':
-    credentials = Credentials.from_service_account_info(os.environ["GOOGLE_SA_CREDS"])
+    credentials = Credentials.from_service_account_info(json.loads(os.environ["GOOGLE_SA_CREDS"]))
     client = Client(credentials=credentials, project=credentials.project_id)
 
     r_team = requests.get(url=f'{TEAMKATALOG_URL}/team?status=ACTIVE')
