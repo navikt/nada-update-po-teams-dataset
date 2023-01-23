@@ -22,7 +22,12 @@ tk_link = {
     "nada": "5ade590e-3bc4-47fb-8b8d-552392f46376",
     "toi": "0150fd7c-df30-43ee-944e-b152d74c64d6",
     "teamia": "e6e3ce19-2cd3-491b-9ad9-817c2e9b7d96",
-    "pensjon-saksbehandling": "45da0127-4d42-49b6-8130-e6c8e566abb8"
+    "pensjon-saksbehandling": "45da0127-4d42-49b6-8130-e6c8e566abb8",
+    "frontendplattform": "d23c3df0-94a1-4548-8bf7-e8f2db6fdab1",
+    "helsearbeidsgiver": "b90fc3ac-b9b5-4581-9831-6ceb9df81808",
+    "supstonad": "e81caa07-8336-460d-b944-c25f690a56ae",
+    "team-effekt": "9c2de791-1438-4691-a24b-6efeea9511cd",
+    "teamcrm": "06a47c6b-557c-491e-b036-d6abbc77b04f"
 }
 
 
