@@ -1,0 +1,1 @@
+0 06 * * * /opt/conda/bin/python /home/jupyter/nada-data-analyse/scheduling/run_nb.py /home/jupyter/nada-data-analyse/notebooks/kostnadsanalyse.ipynb > /home/jupyter/nada-data-analyse/crontab_kostnadsanalyse_log.log 2>&1
