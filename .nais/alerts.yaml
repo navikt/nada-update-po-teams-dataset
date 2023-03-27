@@ -14,7 +14,7 @@ spec:
       for: 2m
       annotations:
         consequence: Dataprodukt blir ikke oppdatert
-        action: "`Ikke en kritisk job. Se logger på https://logs.adeo.no -> søk etter `pod:nada-update-po-teams-dataset* AND namespace:nada`"
+        action: "`Ikke en kritisk job. Se logger på https://logs.adeo.no -> søk etter `pod:nada-update-po-teams-dataset* AND namespace:nada``"
         summary: |-
            Naisjob nada-data-analyse feiler i prod-gcp namespace nada (repo https://github.com/navikt/nada-data-analyse)
       labels:
