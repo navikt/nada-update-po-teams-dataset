@@ -8,6 +8,8 @@ metadata:
 spec:
   image: {{ image }}
   schedule: "10 5 * * *"
+  failedJobsHistoryLimit: 1
+  successfulJobsHistoryLimit: 1
   backoffLimit: 2
   envFrom:
     - secret: nada-data-analyse-sa
