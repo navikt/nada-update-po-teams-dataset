@@ -27,7 +27,13 @@ tk_link = {
     "helsearbeidsgiver": "b90fc3ac-b9b5-4581-9831-6ceb9df81808",
     "supstonad": "e81caa07-8336-460d-b944-c25f690a56ae",
     "team-effekt": "9c2de791-1438-4691-a24b-6efeea9511cd",
-    "teamcrm": "06a47c6b-557c-491e-b036-d6abbc77b04f"
+    "teamcrm": "06a47c6b-557c-491e-b036-d6abbc77b04f",
+    "min-side": "bd43e947-612f-4218-9209-61d7e2524d4a",
+    "okonomi": "772472d6-f251-43a4-ba6b-c699bb7ff4a8",
+    "org": "7cb86192-a6e9-42ed-be45-421807c96618",
+    "pia": "b347ac99-c382-4e5a-a1dd-532e91110e2a",
+    "teamoppfolging": "fa023a7e-cf18-4848-9dcd-7a1b6c2814aa",
+    "tpts": "15bca3d2-2584-4167-85ba-faab1f1cfb53"
 }
 
 
