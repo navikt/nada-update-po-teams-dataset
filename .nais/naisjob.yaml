@@ -20,3 +20,8 @@ spec:
     limit:
       cpu: 100m
       memory: 256Mi
+
+  accessPolicy:
+    outbound:
+      external:
+        - host: teamkatalog-api.prod-fss-pub.nais.io
