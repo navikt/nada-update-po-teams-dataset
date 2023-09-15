@@ -22,6 +22,8 @@ spec:
       memory: 256Mi
 
   accessPolicy:
-    application: team-catalog-frackend
-    namespace: org
-    cluster: prod-gcp
+    outbound:
+      rules:
+        - application: team-catalog-frackend
+          namespace: org
+          cluster: prod-gcp
