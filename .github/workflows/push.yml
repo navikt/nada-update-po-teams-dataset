@@ -3,8 +3,14 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  packages: write
+
 env:
   docker_image: ghcr.io/${{ github.repository }}:${{ github.sha }}
+
+
 
 jobs:
   build:
