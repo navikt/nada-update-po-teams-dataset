@@ -1,13 +1,13 @@
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
-  name: nada-data-analyse-alert
+  name: nada-update-po-teams-alert
   namespace: nada
   labels:
     team: nada
 spec:
   groups:
-  - name: nada-data-analyse-alert
+  - name: nada-update-po-teams-alert
     rules:
     - alert: NaisjobDown
       expr: kube_job_failed{job_name=~"^nada-update-po-teams-dataset.*", namespace="nada"} > 0
@@ -16,7 +16,7 @@ spec:
         consequence: Dataprodukt blir ikke oppdatert
         action: "`Ikke en kritisk job. Se logger på https://logs.adeo.no -> søk etter pod:nada-update-po-teams-dataset* AND namespace:nada`"
         summary: |-
-           Naisjob nada-data-analyse feiler i prod-gcp namespace nada (repo https://github.com/navikt/nada-data-analyse)
+           Naisjob nada-update-po-teams feiler i prod-gcp namespace nada (repo https://github.com/navikt/nada-update-po-teams)
       labels:
         namespace: nada
         severity: critical

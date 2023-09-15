@@ -24,4 +24,4 @@ spec:
   accessPolicy:
     outbound:
       external:
-        - host: teamkatalog-api.prod-fss-pub.nais.io
+        - host: teamkatalog-api.intern.nav.no
