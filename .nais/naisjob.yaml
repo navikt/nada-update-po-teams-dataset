@@ -5,6 +5,9 @@ metadata:
     team: nada
   name: nada-update-po-teams-dataset
   namespace: nada
+permissions:
+  contents: read
+  packages: write
 spec:
   image: {{ image }}
   schedule: "10 5 * * *"
