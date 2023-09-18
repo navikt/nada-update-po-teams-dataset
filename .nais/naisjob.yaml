@@ -24,6 +24,5 @@ spec:
   accessPolicy:
     outbound:
       rules:
-        - application: team-catalog-frackend
+        - application: team-catalog-backend
           namespace: org
-          cluster: prod-gcp
