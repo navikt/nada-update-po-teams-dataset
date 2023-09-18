@@ -10,8 +10,6 @@ permissions:
 env:
   docker_image: ghcr.io/${{ github.repository }}:${{ github.sha }}
 
-
-
 jobs:
   build:
     name: Build and push Docker container
