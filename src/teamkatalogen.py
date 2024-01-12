@@ -3,14 +3,15 @@ import pandas as pd
 
 from config import TEAMKATALOG_URL
 
+tk_headers = {'Nav-Consumer-Id': 'nada-update-po-teams-dataset'}
 
 def get_teams():
-    r_team = requests.get(url=f'{TEAMKATALOG_URL}/team?status=ACTIVE')
+    r_team = requests.get(url=f'{TEAMKATALOG_URL}/team?status=ACTIVE', headers=tk_headers)
     return pd.json_normalize(r_team.json()["content"])
 
 
 def get_po():
-    r_po = requests.get(url=f'{TEAMKATALOG_URL}/productarea?status=ACTIVE')
+    r_po = requests.get(url=f'{TEAMKATALOG_URL}/productarea?status=ACTIVE', headers=tk_headers)
     return pd.json_normalize(r_po.json()["content"])
 
 
