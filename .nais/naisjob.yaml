@@ -14,10 +14,10 @@ spec:
   envFrom:
     - secret: nada-data-analyse-sa
   resources:
-    request:
+    requests:
       cpu: 10m
       memory: 128Mi
-    limit:
+    limits:
       cpu: 100m
       memory: 256Mi
 
