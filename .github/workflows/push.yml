@@ -5,37 +5,33 @@ on:
 
 permissions:
   contents: read
-  packages: write
   id-token: write
 
-env:
-  docker_image: ghcr.io/${{ github.repository }}:${{ github.sha }}
-
 jobs:
-  build:
-    name: Build and push Docker container
-    runs-on: ubuntu-latest
+  build-and-push:
+    name: Build and push GAR
+    runs-on: ubuntu-20.04
+    outputs:
+      image: ${{ steps.docker-build-push.outputs.image }}
     steps:
       - uses: actions/checkout@v4
-      - uses: docker/login-action@v3
+      - name: Push docker image to GAR
+        uses: nais/docker-build-push@v0
+        id: docker-build-push
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-      - uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          tags: ${{ env.docker_image }}
-  deploy:
-    name: Deploy to NAIS
-    needs: build
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+          team: nada
+          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
+          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
+
+  deploy-prod:
+    name: Deploy prod gcp
+    runs-on: ubuntu-20.04
+    needs: [build-and-push]
     steps:
       - uses: actions/checkout@v4
-      - uses: nais/deploy/actions/deploy@v2
+      - name: Deploy to dev-gcp
+        uses: nais/deploy/actions/deploy@v2
         env:
           CLUSTER: prod-gcp
           RESOURCE: .nais/naisjob.yaml,.nais/alerts.yaml
-          VAR: image=${{ env.docker_image }}
+          VAR: image=${{ needs.build-and-push.outputs.image }}
