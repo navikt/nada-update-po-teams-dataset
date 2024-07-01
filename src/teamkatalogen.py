@@ -34,7 +34,16 @@ tk_link = {
     "org": "7cb86192-a6e9-42ed-be45-421807c96618",
     "pia": "b347ac99-c382-4e5a-a1dd-532e91110e2a",
     "teamoppfolging": "fa023a7e-cf18-4848-9dcd-7a1b6c2814aa",
-    "tpts": "15bca3d2-2584-4167-85ba-faab1f1cfb53"
+    "tpts": "15bca3d2-2584-4167-85ba-faab1f1cfb53",
+    "arbeidsgiver-data": "332ae896-1268-4146-a702-4e51c0565e28",
+    "arbeidsindikator": "f14a0b99-fe68-42db-80c3-96ea4f33e63d",
+    "dv-a-team": "d7936d5d-26d7-455a-b96c-fdc6bdcd80c2",
+    "dv-team-pensjon": "a381f49f-02f3-44e3-ae86-04984a8cddb4",
+    "nais-team-appsec": "02ed767d-ce01-49b5-9350-ee4c984fd78f",
+    "nais-team-tilleggsstonader": "4f92aaf9-9a70-4ae5-88cd-4a6d04825616",
+    "navdig": "86cc6a3b-b84d-4b86-9770-5b77bb8a74ce",
+    "team-tiltak": "0150fd7c-df30-43ee-944e-b152d74c64d6",
+    "teampensjon": "4f4ae5bb-60fb-4fde-b9dc-ec5bd1ba6196"
 }
 
 
