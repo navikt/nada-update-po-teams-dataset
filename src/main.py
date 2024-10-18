@@ -5,13 +5,12 @@ import os
 from google.cloud.bigquery import Client
 from google.oauth2.service_account import Credentials
 
-from teamkatalogen import get_teams, get_po, link_naisteam_to_tk
-from markedsplassen import get_dp, get_ds
 from bq import df_to_table
-from logger import create_logger
 from config import TARGET_TABLE
-from pandas_stuff import merge_sort_count, assign_unassigned
-
+from logger import create_logger
+from markedsplassen import get_dp, get_ds
+from pandas_stuff import assign_unassigned, merge_sort_count
+from teamkatalogen import get_po, get_teams, link_naisteam_to_tk
 
 if __name__ == '__main__':
 
@@ -40,7 +39,7 @@ if __name__ == '__main__':
 
     df_merged = assign_unassigned(_logger, df_dp, df_ds, df_merged)
 
-    df_merged["last_updated"] = datetime.datetime.utcnow().isoformat()
+    df_merged["last_updated"] = datetime.datetime.now(datetime.UTC).isoformat()
 
     try:
         err = df_to_table(client, df_merged, TARGET_TABLE)
