@@ -6,7 +6,7 @@ ENV PATH=/venv/bin:$PATH
 COPY requirements.txt .
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
-FROM gcr.io/distroless/python3-debian12:nonroot AS runner
+FROM gcr.io/distroless/python3-debian12 AS runner
 
 COPY src app/
 COPY --from=builder /venv /venv
