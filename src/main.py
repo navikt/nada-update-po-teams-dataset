@@ -19,8 +19,13 @@ if __name__ == '__main__':
     credentials = Credentials.from_service_account_info(json.loads(os.environ["GOOGLE_SA_CREDS"]))
     client = Client(credentials=credentials, project=credentials.project_id)
 
+    _logger.info("Getting teams from teamkatalogen")
     df_team = get_teams()
+    _logger.info(f"Got {df_team.shape[0]} teams")
+
+    _logger.info("Getting product areas from teamkatalogen")
     df_po = get_po()
+    _logger.info(f"Got {df_po.shape[0]} product areas")
 
     # merge team og po
     df_all = df_team.merge(df_po, left_on="productAreaId", right_on="id", suffixes=["_team", "_po"])
@@ -40,6 +45,8 @@ if __name__ == '__main__':
     df_merged = assign_unassigned(_logger, df_dp, df_ds, df_merged)
 
     df_merged["last_updated"] = datetime.datetime.now(datetime.UTC).isoformat()
+
+    _logger.info(f"Trying to overwrite table {TARGET_TABLE} with {df_merged.shape[0]} rows")
 
     try:
         err = df_to_table(client, df_merged, TARGET_TABLE)
