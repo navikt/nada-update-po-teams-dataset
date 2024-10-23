@@ -14,6 +14,5 @@ WORKDIR /app
 COPY src src
 COPY --from=builder /app/venv /app/venv
 ENV PATH="/app/venv/bin:$PATH"
-# ENV PYTHONPATH=/venv/lib/python3.11/site-packages
 
 ENTRYPOINT ["python", "src/main.py"]
