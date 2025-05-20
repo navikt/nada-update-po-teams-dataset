@@ -1,4 +1,4 @@
-google-cloud-bigquery==3.32.0
+google-cloud-bigquery==3.33.0
 google-cloud-bigquery-storage==2.31.0
 google-auth==2.40.1
 pandas==2.2.3
