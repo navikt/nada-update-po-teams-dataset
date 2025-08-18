@@ -1,5 +1,5 @@
-import requests
 import pandas as pd
+import requests
 
 from config import TEAMKATALOG_URL
 
@@ -20,7 +20,7 @@ tk_link = {
     "yrkesskade": "270852c4-4c28-49a8-8189-a16897b31b95",
     "team-ai": "76f378c5-eb35-42db-9f4d-0e8197be0131",
     "spenn": "3c411c72-9587-4c6f-937e-2a404935b778",
-    "nada": "5ade590e-3bc4-47fb-8b8d-552392f46376",
+    "nada": "e507c4dc-5dd6-4a7d-8790-c0ad67815a10",
     "toi": "0150fd7c-df30-43ee-944e-b152d74c64d6",
     "teamia": "e6e3ce19-2cd3-491b-9ad9-817c2e9b7d96",
     "pensjon-saksbehandling": "45da0127-4d42-49b6-8130-e6c8e566abb8",
