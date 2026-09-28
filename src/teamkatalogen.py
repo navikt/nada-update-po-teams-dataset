@@ -47,13 +47,33 @@ tk_link = {
 }
 
 
+def normalize_naisteam(naisteam):
+    prefix = "nais-team-"
+    if isinstance(naisteam, str) and naisteam.startswith(prefix):
+        return naisteam[len(prefix):]
+    return naisteam
+
+
+tk_link_normalized = {
+    normalize_naisteam(naisteam): team_id
+    for naisteam, team_id in tk_link.items()
+}
+
+
 def link_naisteam_to_tk(naisteam, df_tk):
-    i = 0
-    while i < df_tk.shape[0]:
-        if naisteam in df_tk.loc[i, "naisTeams"]:
-            return df_tk.loc[i, "id_team"]
-        elif naisteam in tk_link:
-            return tk_link[naisteam]
-        elif i == df_tk.shape[0] - 1:
-            return "unknown"
-        i += 1
+    normalized_naisteam = normalize_naisteam(naisteam)
+
+    for _, team in df_tk.iterrows():
+        nais_teams = team["naisTeams"]
+        if isinstance(nais_teams, str):
+            nais_teams = [nais_teams]
+        if isinstance(nais_teams, (list, tuple, set)) and normalized_naisteam in {
+            normalize_naisteam(team_name)
+            for team_name in nais_teams
+            if isinstance(team_name, str)
+        }:
+            return team["id_team"]
+
+    if normalized_naisteam in tk_link_normalized:
+        return tk_link_normalized[normalized_naisteam]
+    return "unknown"
